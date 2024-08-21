@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرحبًا بك في الدردشة العامة</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        #welcome {
+            text-align: center;
+        }
+        #welcome h1 {
+            margin-bottom: 20px;
+        }
+        #username {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        #enter-chat {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #enter-chat:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div id="welcome">
+    <h1>مرحبًا بك في الدردشة العامة!</h1>
+    <input type="text" id="username" placeholder="أدخل اسمك">
+    <button id="enter-chat" onclick="enterChat()">اضغط للدخول إلى الدردشة العامة</button>
+</div>
+
+<script>
+    function enterChat() {
+        const username = document.getElementById('username').value;
+        if (username.trim() !== '') {
+            localStorage.setItem('username', username); // تخزين الاسم في Local Storage
+            window.location.href = "chat.html"; // الانتقال إلى صفحة الدردشة
+        } else {
+            alert('يرجى إدخال اسمك');
+        }
+    }
+</script>
+
+
+</body></html>
